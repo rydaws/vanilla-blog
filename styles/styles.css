@@ -1,0 +1,19 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: space-between;
+    gap: 5px;
+    list-style-type: none;
+}
+.navbar a {
+    text-decoration: none;
+}
+
+main {
+    background-color: aqua;
+}
+
+body {
+    /* width: 100%; */
+}
