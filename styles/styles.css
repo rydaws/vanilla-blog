@@ -1,3 +1,14 @@
+body {
+    --primary-background: #f5f5f9;
+    --primary-text: #3d3846;
+    background-color: var(--primary-background);
+    color: var(--primary-text);
+}
+
+a {
+    color: var(--primary-text)
+}
+
 .navbar {
     display: flex;
     flex-direction: row;
@@ -11,9 +22,14 @@
 }
 
 main {
-    background-color: aqua;
+    /* background-color: aqua; */
 }
 
-body {
-    /* width: 100%; */
+@media (prefers-color-scheme: dark) {
+    body {
+    --primary-background: #3d3846;
+    --primary-text: #f5f5f9;
+    background-color: var(--primary-background);
+    color: var(--primary-text);
+    }
 }
