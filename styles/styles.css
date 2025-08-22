@@ -1,9 +1,18 @@
+
+@font-face {
+    font-family: 'HeavyDataNerdFont';
+    src: url('../assets/fonts/HeavyData/HeavyDataNerdFont-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
     --primary-background: #f5f5f9;
     --primary-text: #3d3846;
     background-color: var(--primary-background);
     color: var(--primary-text);
 }
+
 
 a {
     color: var(--primary-text)
@@ -15,7 +24,12 @@ a {
     /* align-items: center; */
     justify-content: space-between;
     gap: 5px;
+    margin: 2rem;
+    border:#f5f5f9 solid 1px;
+    font-size: 1.5rem;
     list-style-type: none;
+    font-family: 'HeavyDataNerdFont', sans-serif;
+
 }
 .navbar a {
     text-decoration: none;
@@ -32,4 +46,18 @@ main {
     background-color: var(--primary-background);
     color: var(--primary-text);
     }
+}
+
+.blog-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.logo {
+    padding: .5rem;
+    /* background-color: rgba(255, 255, 255, 0.1); */
+    /* border-radius: 5rem; */
 }
