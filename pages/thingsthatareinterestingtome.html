@@ -5,6 +5,7 @@
     <title>Blog - GROMORG</title>
     <link rel="stylesheet" href="../styles/styles.css" />
     <script src="../js/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js"></script>
   </head>
   <body>
     <header>
@@ -13,7 +14,11 @@
     <nav>
       <ul class="navbar">
         <li><a href="../index.html">home</a></li>
-        <li><a id="active-nav-el" href="thingsthatareinterestingtome.html">BLOG</a></li>
+        <li>
+          <a id="active-nav-el" href="thingsthatareinterestingtome.html"
+            >BLOG</a
+          >
+        </li>
         <li><a href="ifyoucaretoknowabouttheauthor.html">about</a></li>
         <li><a href="mycatalogofprojectsthatyoucanview.html">projects</a></li>
       </ul>
@@ -21,7 +26,11 @@
     <main>
       <article>
         <h2>GROMORG BLOG</h2>
-        <p>Under construction</p>
+        <div data-markdown class="markdown-body">
+          # Welcome to the GROMORG blog This page uses **markdown-it** to render
+          Markdown into HTML. - Simple lists - **Bold** text -
+          [Links](https://example.com) Enjoy.
+        </div>
       </article>
     </main>
     <footer>

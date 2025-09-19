@@ -37,3 +37,33 @@ if (!storedTheme) {
     applyTheme(null);
   });
 }
+
+(function renderMarkdownBlocks() {
+  if (typeof window.markdownit !== "function") return;
+  // enable single-line breaks and keep other useful features
+  const md = window.markdownit({
+    html: true,
+    linkify: true,
+    typographer: true,
+    breaks: true,
+  });
+
+  document.querySelectorAll("[data-markdown]").forEach((el) => {
+    let source = el.textContent || "";
+    // remove leading/trailing blank lines then remove common indent
+    source = source.replace(/^\s*\n|\n\s*$/g, "");
+    const lines = source.split(/\r?\n/);
+    const minIndent = lines.reduce((m, l) => {
+      if (!l.trim()) return m;
+      const match = l.match(/^(\s*)/);
+      const len = match ? match[1].length : 0;
+      return m === null ? len : Math.min(m, len);
+    }, null);
+    if (minIndent && minIndent > 0) {
+      source = lines.map((l) => l.slice(minIndent)).join("\n");
+    }
+    source = source.trim();
+    if (!source) return;
+    el.innerHTML = md.render(source);
+  });
+})();
