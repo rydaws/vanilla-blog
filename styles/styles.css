@@ -104,3 +104,13 @@ a:hover {
   margin: 0 auto;
   padding: 1rem;
 }
+
+#blog-posts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.blog-post {
+    margin-bottom: 2rem;
+}
