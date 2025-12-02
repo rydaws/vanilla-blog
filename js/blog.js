@@ -23,10 +23,15 @@ function loadPosts() {
     const postEl = document.createElement("li");
     postEl.className = "blog-post";
 
+    // postEl.innerHTML = `
+    //         <h2>${post.title}</h2>
+    //         <p>${post.snippet}</p>
+    //         <a href="post.html?slug=${post.slug}">Read more</a>
+    //     `;
     postEl.innerHTML = `
-            <h2>${post.title}</h2>
-            <p>${post.snippet}</p>
-            <a href="post.html?slug=${post.slug}">Read more</a>
+            <a class="blog-post-link" href="post.html?slug=${post.slug}">
+                ${post.title}
+            </a>
         `;
     container.appendChild(postEl);
   });
