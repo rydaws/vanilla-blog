@@ -24,7 +24,7 @@ function updateToggleIcon() {
   const btn = document.getElementById("theme-toggle");
   if (!btn) return;
   const isDark = document.body.classList.contains("dark-theme");
-  btn.textContent = isDark ? "\u2600" : "\u263E";
+  btn.textContent = isDark ? "\u263C" : "\u263E";
 }
 
 const storedTheme = localStorage.getItem("theme");

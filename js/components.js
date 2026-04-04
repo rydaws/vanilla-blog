@@ -30,7 +30,7 @@ function renderNavbar() {
   });
 
   items.push(
-    '<li><button id="theme-toggle" aria-label="Toggle theme">&#9790;</button></li>'
+    '<li><button id="theme-toggle" aria-label="Toggle theme">&#9788;</button></li>'
   );
 
   nav.innerHTML = `<ul class="navbar">${items.join("\n")}</ul>`;
@@ -42,7 +42,7 @@ function renderFooter() {
 
   footer.innerHTML = `
     <div class="container">
-      <p>&copy; 2025 rydaws</p>
+      <p>&copy; 2026 rydaws</p>
       <ul>
         <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/rydaws">github</a></li>
         <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ryan-dawson-dev/">linkedin</a></li>

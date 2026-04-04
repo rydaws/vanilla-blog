@@ -4,6 +4,7 @@
     format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -12,10 +13,26 @@
     format("truetype");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 :root {
   --gutter: 16px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 body {
@@ -168,9 +185,13 @@ a:hover {
   background: none;
   border: 1px solid var(--primary-text);
   color: var(--primary-text);
-  font-family: "ProFont", sans-serif;
   font-size: 1.2rem;
-  padding: 0.2rem 0.5rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   border-radius: 0.4rem;
   cursor: pointer;
   transition: background 0.3s ease, box-shadow 0.3s ease;
@@ -196,7 +217,7 @@ a:hover {
 .hero-title {
   font-family: "HeavyDataNerdFont", monospace;
   font-size: clamp(2.5rem, 10vw, 5rem);
-  letter-spacing: 0.4rem;
+  letter-spacing: clamp(0.1rem, 1vw, 0.4rem);
   margin: 0.5rem 0 0;
   color: #b57759;
 }
@@ -275,7 +296,8 @@ footer {
 
   #theme-toggle {
     font-size: 1rem;
-    padding: 0.15rem 0.4rem;
+    width: 1.8rem;
+    height: 1.8rem;
   }
 
   .hero {
