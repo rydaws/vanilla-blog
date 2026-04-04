@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - GROMORG</title>
     <link rel="stylesheet" href="styles/styles.css" />
     <script src="js/components.js" defer></script>
@@ -9,13 +10,14 @@
   </head>
   <body data-page="home">
     <header></header>
-    <nav id="navbar"></nav>
-    <main>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <nav id="navbar" aria-label="Main navigation"></nav>
+    <main id="main-content">
       <section class="hero">
         <img
           class="logo"
           src="../assets/gromorg-logo.png"
-          alt="Main Logo"
+          alt="GROMORG logo"
         />
         <h1 class="hero-title"><span class="nav-logo-dark">GROMM</span><span class="nav-logo-dot">.</span><span class="nav-logo-light">ORG</span></h1>
         <p class="hero-subtitle">Look.</p>

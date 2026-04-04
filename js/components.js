@@ -21,10 +21,11 @@ function renderNavbar() {
     const isActive = link.page === activePage;
     if (link.isLogo) {
       const activeClass = isActive ? " nav-logo-active" : "";
-      return `<li><a class="nav-logo${activeClass}" href="${href}">${link.label}</a></li>`;
+      const ariaCurrent = isActive ? ' aria-current="page"' : "";
+      return `<li><a class="nav-logo${activeClass}" href="${href}"${ariaCurrent}>${link.label}</a></li>`;
     }
     const text = isActive ? link.label.toUpperCase() : link.label;
-    const activeAttr = isActive ? ' id="active-nav-el"' : "";
+    const activeAttr = isActive ? ' id="active-nav-el" aria-current="page"' : "";
     return `<li><a${activeAttr} href="${href}">${text}</a></li>`;
   });
 
@@ -43,8 +44,8 @@ function renderFooter() {
     <div class="container">
       <p>&copy; 2025 rydaws</p>
       <ul>
-        <li><a target="_blank" referrerpolicy="noreferrer" href="https://github.com/rydaws">github</a></li>
-        <li><a target="_blank" referrerpolicy="noreferrer" href="https://www.linkedin.com/in/ryan-dawson-dev/">linkedin</a></li>
+        <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/rydaws">github</a></li>
+        <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/ryan-dawson-dev/">linkedin</a></li>
       </ul>
     </div>`;
 }
