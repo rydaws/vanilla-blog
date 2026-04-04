@@ -28,8 +28,11 @@ body {
   flex-direction: column;
   margin: 0 auto;
   padding: 0 var(--gutter);
-  --primary-background: #f5f5f9;
-  --primary-text: #3d3846;
+  --primary-background: #fdf6e3;
+  --primary-text: #657b83;
+  --accent: #cb4b16;
+  --accent-glow: #dc6d3a;
+  --nav-border: #cb4b16;
   background-color: var(--primary-background);
   color: var(--primary-text);
 }
@@ -44,6 +47,9 @@ body {
 body.dark-theme {
   --primary-background: #3d3846;
   --primary-text: #f5f5f9;
+  --accent: #8f563b;
+  --accent-glow: #b57759;
+  --nav-border: #b57759;
   background-color: var(--primary-background);
   color: var(--primary-text);
 }
@@ -52,13 +58,19 @@ body.dark-theme {
   body {
     --primary-background: #3d3846;
     --primary-text: #f5f5f9;
+    --accent: #8f563b;
+    --accent-glow: #b57759;
+    --nav-border: #b57759;
     background-color: var(--primary-background);
     color: var(--primary-text);
   }
 
   body.light-theme {
-    --primary-background: #f5f5f9;
-    --primary-text: #3d3846;
+    --primary-background: #fdf6e3;
+    --primary-text: #657b83;
+    --accent: #cb4b16;
+    --accent-glow: #dc6d3a;
+    --nav-border: #cb4b16;
     background-color: var(--primary-background);
     color: var(--primary-text);
   }
@@ -80,26 +92,39 @@ a {
 }
 
 a:hover {
-  background: #8f563b;
-  /* background: radial-gradient(
-    circle,
-    rgba(163, 49, 26, 1) 0%,
-    rgba(207, 134, 0, 1) 100%
-  ); */
+  background: var(--accent);
   border-radius: 0.4rem;
-
-  color: #f5f5f9;
-  box-shadow: #b57759 0px 0px 8px;
+  color: #fdf6e3;
+  box-shadow: var(--accent-glow) 0px 0px 8px;
 }
 
 #active-nav-el {
   font-weight: bold;
   text-transform: uppercase;
-  border-bottom: 2px solid #b57759;
+  border-bottom: 2px solid var(--nav-border);
 }
 
 .navbar a {
   text-decoration: none;
+}
+
+#theme-toggle {
+  background: none;
+  border: 1px solid var(--primary-text);
+  color: var(--primary-text);
+  font-family: "ProFont", sans-serif;
+  font-size: 1.2rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#theme-toggle:hover {
+  background: var(--accent);
+  color: #fdf6e3;
+  box-shadow: var(--accent-glow) 0px 0px 8px;
+  border-color: var(--accent);
 }
 
 .blog-header {

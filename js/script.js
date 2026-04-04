@@ -18,6 +18,13 @@ function applyTheme(theme) {
       document.body.classList.remove("dark-theme");
     }
   }
+  updateToggleIcon();
+}
+
+function updateToggleIcon() {
+  if (!toggleButton) return;
+  const isDark = document.body.classList.contains("dark-theme");
+  toggleButton.textContent = isDark ? "\u2600" : "\u263E";
 }
 
 const storedTheme = localStorage.getItem("theme");
