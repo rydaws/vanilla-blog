@@ -156,6 +156,32 @@ a:hover {
   margin: 1rem 0rem;
 }
 
+.media-section {
+  margin-bottom: 1.5rem;
+}
+
+.media-list {
+  list-style: none;
+  padding: 0;
+}
+
+.media-entry {
+  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--accent);
+}
+
+.media-title {
+  font-family: "ProFont", sans-serif;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.media-thoughts {
+  margin: 0.25rem 0 0;
+  font-size: 0.95rem;
+}
+
 footer {
   display: flex;
   width: 100%;

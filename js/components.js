@@ -2,7 +2,7 @@ const navLinks = [
   { page: "home", label: "home", href: "index.html" },
   { page: "blog", label: "blog", href: "pages/thingsthatareinterestingtome.html" },
   { page: "about", label: "about", href: "pages/ifyoucaretoknowabouttheauthor.html" },
-  { page: "projects", label: "projects", href: "pages/mycatalogofprojectsthatyoucanview.html" },
+  { page: "media", label: "media", href: "pages/thingsivebeenstaringat.html" },
 ];
 
 function isSubpage() {

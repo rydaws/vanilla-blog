@@ -1,68 +1,83 @@
-console.log("blog script");
+const POSTS_DIR = "../assets/posts/";
 
-const postArray = [
-  {
-    slug: "001-first-post",
-    title: "My First Post",
-    snippet: "My very first blog post",
-    url: "../../assets/posts/001-first-post.md",
-  },
-  {
-    slug: "002-second-post",
-    title: "Second Post",
-    snippet: "Another day, another post",
-    url: "../../assets/posts/002-second-post.md",
-  },
-];
+// Stuff at beginning of markdown files is treated as "frontmatter" for metadata
+function parseFrontmatter(raw) {
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
+  if (!match) return { meta: {}, content: raw };
 
-function loadPosts() {
+  const meta = {};
+  // 0: full match, 1: frontmatter, 2: content
+  match[1].split(/\r?\n/).forEach((line) => {
+    const i = line.indexOf(":");
+    if (i === -1) return;
+    const key = line.slice(0, i).trim();
+    const val = line.slice(i + 1).trim();
+    meta[key] = val;
+  });
+  return { meta, content: match[2] };
+}
+
+function renderMarkdown(text) {
+  const md = window.markdownit({
+    html: true,
+    linkify: true,
+    typographer: true,
+    breaks: true,
+  });
+  return md.render(text);
+}
+
+async function loadPostList() {
   const container = document.getElementById("blog-posts");
   if (!container) return;
 
-  postArray.forEach((post) => {
-    const postEl = document.createElement("li");
-    postEl.className = "blog-post";
+  const res = await fetch(POSTS_DIR + "posts.json");
+  const filenames = await res.json();
 
-    // postEl.innerHTML = `
-    //         <h2>${post.title}</h2>
-    //         <p>${post.snippet}</p>
-    //         <a href="post.html?slug=${post.slug}">Read more</a>
-    //     `;
-    postEl.innerHTML = `
-            <a class="blog-post-link" href="post.html?slug=${post.slug}">
-                ${post.title}
-            </a>
-        `;
-    container.appendChild(postEl);
+  const posts = await Promise.all(
+    filenames.map(async (filename) => {
+      const raw = await fetch(POSTS_DIR + filename).then((r) => r.text());
+      const { meta } = parseFrontmatter(raw);
+      const slug = filename.replace(/\.md$/, "");
+      return { slug, ...meta };
+    }),
+  );
+
+  posts.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+
+  posts.forEach((post) => {
+    const li = document.createElement("li");
+    li.className = "blog-post";
+    li.innerHTML = `
+      <a class="blog-post-link" href="post.html?slug=${post.slug}">
+        ${post.title || post.slug}
+      </a>`;
+    container.appendChild(li);
   });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const postSlug = urlParams.get("slug");
+async function loadSinglePost(slug) {
+  const res = await fetch(POSTS_DIR + slug + ".md");
+  if (!res.ok) {
+    window.location.href = "404.html";
+    return;
+  }
 
-  if (postSlug) {
-    const post = postArray.find((p) => p.slug === postSlug);
-    if (post) {
-      fetch(post.url)
-        .then((response) => response.text())
-        .then((markdown) => {
-          const md = window.markdownit({
-            html: true,
-            linkify: true,
-            typographer: true,
-            breaks: true,
-          });
-          const content = document.getElementById("post-content");
-          if (content) {
-            content.innerHTML = md.render(markdown);
-          }
-        });
-    } else {
-        console.error("Post not found:", postId);
-        window.location.href = "404.html";
-    }
+  const raw = await res.text();
+  const { meta, content } = parseFrontmatter(raw);
+  const postContent = document.getElementById("post-content");
+  if (!postContent) return;
+
+  postContent.innerHTML = renderMarkdown(content);
+
+  document.title = (meta.title || slug) + " - GROMORG";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slug = new URLSearchParams(window.location.search).get("slug");
+  if (slug) {
+    loadSinglePost(slug);
   } else {
-    loadPosts();
+    loadPostList();
   }
 });
