@@ -20,8 +20,8 @@ function renderNavbar() {
     const href = prefix + link.href;
     const isActive = link.page === activePage;
     if (link.isLogo) {
-      const activeClass = isActive ? " nav-logo-active" : "";
-      const ariaCurrent = isActive ? ' aria-current="page"' : "";
+      const activeClass = isActive ? "nav-logo-active" : "";
+      const ariaCurrent = isActive ? 'aria-current="page"' : "";
       return `<li><a class="nav-logo${activeClass}" href="${href}"${ariaCurrent}>${link.label}</a></li>`;
     }
     const text = isActive ? link.label.toUpperCase() : link.label;

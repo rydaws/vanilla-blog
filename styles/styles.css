@@ -113,10 +113,13 @@ a {
 .navbar {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 4px;
   font-size: 1.2rem;
   list-style-type: none;
   font-family: "ProFont", sans-serif;
+  padding: 0;
 }
 
 a:hover {
@@ -184,7 +187,7 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5rem;
+  gap: 3rem;
   justify-content: center;
   text-align: center;
   min-height: 80vh;
@@ -192,7 +195,7 @@ a:hover {
 
 .hero-title {
   font-family: "HeavyDataNerdFont", monospace;
-  font-size: 5rem;
+  font-size: clamp(2.5rem, 10vw, 5rem);
   letter-spacing: 0.4rem;
   margin: 0.5rem 0 0;
   color: #b57759;
@@ -258,4 +261,37 @@ footer {
   max-width: 480px;
   margin: 0;
   padding: 0 var(--gutter);
+}
+
+@media (max-width: 400px) {
+  .navbar {
+    font-size: 1rem;
+    gap: 2px;
+  }
+
+  .nav-logo {
+    font-size: 1rem;
+  }
+
+  #theme-toggle {
+    font-size: 1rem;
+    padding: 0.15rem 0.4rem;
+  }
+
+  .hero {
+    gap: 2rem;
+    min-height: 70vh;
+  }
+
+  .logo {
+    max-width: 200px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .markdown-body {
+    padding: 0.5rem;
+  }
 }
