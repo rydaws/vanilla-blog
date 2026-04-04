@@ -1,5 +1,5 @@
 const navLinks = [
-  { page: "home", label: "home", href: "index.html" },
+  { page: "home", label: '<span class="nav-logo-dark">GROMM</span><span class="nav-logo-dot">.</span><span class="nav-logo-light">ORG</span>', href: "index.html", isLogo: true },
   { page: "blog", label: "blog", href: "pages/thingsthatareinterestingtome.html" },
   { page: "about", label: "about", href: "pages/ifyoucaretoknowabouttheauthor.html" },
   { page: "media", label: "media", href: "pages/thingsivebeenstaringat.html" },
@@ -19,6 +19,10 @@ function renderNavbar() {
   const items = navLinks.map((link) => {
     const href = prefix + link.href;
     const isActive = link.page === activePage;
+    if (link.isLogo) {
+      const activeClass = isActive ? " nav-logo-active" : "";
+      return `<li><a class="nav-logo${activeClass}" href="${href}">${link.label}</a></li>`;
+    }
     const text = isActive ? link.label.toUpperCase() : link.label;
     const activeAttr = isActive ? ' id="active-nav-el"' : "";
     return `<li><a${activeAttr} href="${href}">${text}</a></li>`;

@@ -33,6 +33,8 @@ body {
   --accent: #cb4b16;
   --accent-glow: #dc6d3a;
   --nav-border: #cb4b16;
+  --logo-dark: #8f563b;
+  --logo-light: #b57759;
   background-color: var(--primary-background);
   color: var(--primary-text);
 }
@@ -50,6 +52,8 @@ body.dark-theme {
   --accent: #8f563b;
   --accent-glow: #b57759;
   --nav-border: #b57759;
+  --logo-dark: #c4a882;
+  --logo-light: #e0cdb5;
   background-color: var(--primary-background);
   color: var(--primary-text);
 }
@@ -61,6 +65,8 @@ body.dark-theme {
     --accent: #8f563b;
     --accent-glow: #b57759;
     --nav-border: #b57759;
+    --logo-dark: #c4a882;
+    --logo-light: #e0cdb5;
     background-color: var(--primary-background);
     color: var(--primary-text);
   }
@@ -71,6 +77,8 @@ body.dark-theme {
     --accent: #cb4b16;
     --accent-glow: #dc6d3a;
     --nav-border: #cb4b16;
+    --logo-dark: #8f563b;
+    --logo-light: #b57759;
     background-color: var(--primary-background);
     color: var(--primary-text);
   }
@@ -109,6 +117,31 @@ a:hover {
   text-decoration: none;
 }
 
+.nav-logo {
+  font-family: "HeavyDataNerdFont", monospace;
+  font-size: 1.2rem;
+}
+
+.nav-logo-dark {
+  color: var(--logo-dark);
+}
+
+.nav-logo-light {
+  color: var(--logo-light);
+}
+
+.nav-logo-dot {
+  color: var(--primary-text);
+}
+
+.nav-logo-active {
+  border-bottom: 2px solid var(--nav-border);
+}
+
+.nav-logo:hover span {
+  color: var(--primary-background);
+}
+
 #theme-toggle {
   background: none;
   border: 1px solid var(--primary-text);
@@ -128,16 +161,34 @@ a:hover {
   border-color: var(--accent);
 }
 
-.blog-header {
+.hero {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 5rem;
   justify-content: center;
   text-align: center;
+  min-height: 80vh;
+}
+
+.hero-title {
+  font-family: "HeavyDataNerdFont", monospace;
+  font-size: 5rem;
+  letter-spacing: 0.4rem;
+  margin: 0.5rem 0 0;
+  color: #b57759;
+}
+
+.hero-subtitle {
+  font-family: "ProFont", sans-serif;
+  font-size: 1.4rem;
+  margin: 0.75rem 0 0;
+  opacity: 0.7;
 }
 
 .logo {
   padding: 0.5rem;
+  max-width: 280px;
 }
 
 .markdown-body {
