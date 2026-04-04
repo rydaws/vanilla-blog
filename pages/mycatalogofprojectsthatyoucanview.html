@@ -2,23 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Projects - My Website</title>
+    <title>Projects - GROMORG</title>
     <link rel="stylesheet" href="../styles/styles.css" />
+    <script src="../js/components.js" defer></script>
     <script src="../js/script.js" defer></script>
   </head>
-  <body>
-    <header>
-      <!-- <h1>Projects</h1> -->
-    </header>
-    <nav>
-      <ul class="navbar">
-        <li><a href="../index.html">home</a></li>
-        <li><a href="thingsthatareinterestingtome.html">blog</a></li>
-        <li><a href="ifyoucaretoknowabouttheauthor.html">about</a></li>
-        <li><a id="active-nav-el" href="mycatalogofprojectsthatyoucanview.html">PROJECTS</a></li>
-        <li><button id="theme-toggle" aria-label="Toggle theme">&#9790;</button></li>
-      </ul>
-    </nav>
+  <body data-page="projects">
+    <header></header>
+    <nav id="navbar"></nav>
     <main>
       <section class="projects">
         <article class="project">
@@ -38,8 +29,6 @@
         </article>
       </section>
     </main>
-    <footer>
-      <p>&copy; 2025 My Website</p>
-    </footer>
+    <footer id="footer"></footer>
   </body>
 </html>

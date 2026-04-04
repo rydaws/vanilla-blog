@@ -80,6 +80,7 @@ a {
   color: var(--primary-text);
   padding: 0.2rem 0.4rem;
   transition: background 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0.4rem 0.4rem 0rem 0rem;
 }
 
 .navbar {

@@ -2,23 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>About - My Website</title>
+    <title>About - GROMORG</title>
     <link rel="stylesheet" href="../styles/styles.css" />
+    <script src="../js/components.js" defer></script>
     <script src="../js/script.js" defer></script>
   </head>
-  <body>
-    <header>
-      <!-- <h1>About</h1> -->
-    </header>
-    <nav>
-      <ul class="navbar">
-        <li><a href="../index.html">home</a></li>
-        <li><a href="thingsthatareinterestingtome.html">blog</a></li>
-        <li><a id="active-nav-el" href="ifyoucaretoknowabouttheauthor.html">ABOUT</a></li>
-        <li><a href="mycatalogofprojectsthatyoucanview.html">projects</a></li>
-        <li><button id="theme-toggle" aria-label="Toggle theme">&#9790;</button></li>
-      </ul>
-    </nav>
+  <body data-page="about">
+    <header></header>
+    <nav id="navbar"></nav>
     <main>
       <section>
         <img class="logo" src="../assets/giphy.gif" alt="Main Logo" style="width: auto; height: auto;">
@@ -30,12 +21,6 @@
         <p>You can add your contact details or a contact form here.</p>
       </section>
     </main>
-    <footer>
-      <p>&copy; 2025 rydaws</p>
-      <ul>
-        <a target="_blank" referrerpolicy="noreferrer" href="https://github.com/rydaws">github</a>
-        <a target="_blank" referrerpolicy="noreferrer" href="https://linkedin.com/ryan-dawson">linkedin</a>
-      </ul>
-    </footer>
+    <footer id="footer"></footer>
   </body>
 </html>

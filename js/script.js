@@ -1,4 +1,3 @@
-const toggleButton = document.getElementById("theme-toggle");
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
 function applyTheme(theme) {
@@ -22,14 +21,16 @@ function applyTheme(theme) {
 }
 
 function updateToggleIcon() {
-  if (!toggleButton) return;
+  const btn = document.getElementById("theme-toggle");
+  if (!btn) return;
   const isDark = document.body.classList.contains("dark-theme");
-  toggleButton.textContent = isDark ? "\u2600" : "\u263E";
+  btn.textContent = isDark ? "\u2600" : "\u263E";
 }
 
 const storedTheme = localStorage.getItem("theme");
 applyTheme(storedTheme);
 
+const toggleButton = document.getElementById("theme-toggle");
 if (toggleButton) {
   toggleButton.addEventListener("click", function () {
     const isDark = document.body.classList.contains("dark-theme");
@@ -47,7 +48,6 @@ if (!storedTheme) {
 
 (function renderMarkdownBlocks() {
   if (typeof window.markdownit !== "function") return;
-  // enable single-line breaks and keep other useful features
   const md = window.markdownit({
     html: true,
     linkify: true,
@@ -57,7 +57,6 @@ if (!storedTheme) {
 
   document.querySelectorAll("[data-markdown]").forEach((el) => {
     let source = el.textContent || "";
-    // remove leading/trailing blank lines then remove common indent
     source = source.replace(/^\s*\n|\n\s*$/g, "");
     const lines = source.split(/\r?\n/);
     const minIndent = lines.reduce((m, l) => {

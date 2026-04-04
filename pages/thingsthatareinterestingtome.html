@@ -4,48 +4,19 @@
     <meta charset="UTF-8" />
     <title>Blog - GROMORG</title>
     <link rel="stylesheet" href="../styles/styles.css" />
+    <script src="../js/components.js" defer></script>
     <script src="../js/script.js" defer></script>
     <script src="../js/blog.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/markdown-it@14.1.0/dist/markdown-it.min.js"></script>
   </head>
-  <body>
-    <header>
-      <!-- <h1>Blog</h1> -->
-    </header>
-    <nav>
-      <ul class="navbar">
-        <li><a href="../index.html">home</a></li>
-        <li>
-          <a id="active-nav-el" href="thingsthatareinterestingtome.html"
-            >BLOG</a
-          >
-        </li>
-        <li><a href="ifyoucaretoknowabouttheauthor.html">about</a></li>
-        <li><a href="mycatalogofprojectsthatyoucanview.html">projects</a></li>
-        <li><button id="theme-toggle" aria-label="Toggle theme">&#9790;</button></li>
-      </ul>
-    </nav>
+  <body data-page="blog">
+    <header></header>
+    <nav id="navbar"></nav>
     <main>
       <article>
         <ul id="blog-posts" />
       </article>
     </main>
-    <footer>
-      <p>&copy; 2025 rydaws</p>
-      <ul>
-        <a
-          target="_blank"
-          referrerpolicy="noreferrer"
-          href="https://github.com/rydaws"
-          >github</a
-        >
-        <a
-          target="_blank"
-          referrerpolicy="noreferrer"
-          href="https://linkedin.com/ryan-dawson"
-          >linkedin</a
-        >
-      </ul>
-    </footer>
+    <footer id="footer"></footer>
   </body>
 </html>

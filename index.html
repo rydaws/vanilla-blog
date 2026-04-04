@@ -4,23 +4,12 @@
     <meta charset="UTF-8" />
     <title>Home - GROMORG</title>
     <link rel="stylesheet" href="styles/styles.css" />
+    <script src="js/components.js" defer></script>
     <script src="js/script.js" defer></script>
   </head>
-  <body>
-    <header>
-      <!-- <h1>Welcome to My Website</h1> -->
-    </header>
-    <nav>
-      <ul class="navbar">
-        <li><a id="active-nav-el" href="index.html">HOME</a></li>
-        <li><a href="pages/thingsthatareinterestingtome.html">blog</a></li>
-        <li><a href="pages/ifyoucaretoknowabouttheauthor.html">about</a></li>
-        <li>
-          <a href="pages/mycatalogofprojectsthatyoucanview.html">projects</a>
-        </li>
-        <li><button id="theme-toggle" aria-label="Toggle theme">&#9790;</button></li>
-      </ul>
-    </nav>
+  <body data-page="home">
+    <header></header>
+    <nav id="navbar"></nav>
     <main>
       <section class="blog-header">
         <img
@@ -35,24 +24,6 @@
         <p>Look.</p>
       </section>
     </main>
-    <footer>
-      <div class="container">
-        <p>&copy; 2025 rydaws</p>
-        <ul>
-          <a
-            target="_blank"
-            referrerpolicy="noreferrer"
-            href="https://github.com/rydaws"
-            >github</a
-          >
-          <a
-            target="_blank"
-            referrerpolicy="noreferrer"
-            href="https://linkedin.com/ryan-dawson"
-            >linkedin</a
-          >
-        </ul>
-      </div>
-    </footer>
+    <footer id="footer"></footer>
   </body>
 </html>
