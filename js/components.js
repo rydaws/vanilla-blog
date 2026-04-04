@@ -44,7 +44,7 @@ function renderFooter() {
       <p>&copy; 2025 rydaws</p>
       <ul>
         <li><a target="_blank" referrerpolicy="noreferrer" href="https://github.com/rydaws">github</a></li>
-        <li><a target="_blank" referrerpolicy="noreferrer" href="https://linkedin.com/ryan-dawson">linkedin</a></li>
+        <li><a target="_blank" referrerpolicy="noreferrer" href="https://www.linkedin.com/in/ryan-dawson-dev/">linkedin</a></li>
       </ul>
     </div>`;
 }
