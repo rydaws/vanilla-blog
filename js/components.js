@@ -43,8 +43,8 @@ function renderFooter() {
     <div class="container">
       <p>&copy; 2025 rydaws</p>
       <ul>
-        <a target="_blank" referrerpolicy="noreferrer" href="https://github.com/rydaws">github</a>
-        <a target="_blank" referrerpolicy="noreferrer" href="https://linkedin.com/ryan-dawson">linkedin</a>
+        <li><a target="_blank" referrerpolicy="noreferrer" href="https://github.com/rydaws">github</a></li>
+        <li><a target="_blank" referrerpolicy="noreferrer" href="https://linkedin.com/ryan-dawson">linkedin</a></li>
       </ul>
     </div>`;
 }
